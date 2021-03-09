@@ -12,9 +12,9 @@ from tensorflow.keras.applications.vgg19 import preprocess_input
 
 # set paths
 # set categories/examplars directory
-main_path = '/media/proactionlab/Storage/NeuralNet_80Tools/ImageSet/test'
+main_path = '~/ImageSet/test'
 # set a new directory to store features extracted.txt (set a new directory for each new layer)
-newpath = '/media/proactionlab/Storage/NeuralNet_80Tools/ExtracFeatures/block1_conv1' #change for each new layer
+newpath = '~/block1_conv1' #change for each new layer
 # set a name to the new file (only identify the layer)
 table = '_block1_conv1_features.txt' #change for each new layer
 # number of features extracted from each layer (e.g. from block1_conv1 the output has 224*224*64 = 3211264 dimentions)
@@ -56,3 +56,4 @@ for cat in categories:
         # write a .txt with each examplar in a row and features in columns
         with open(newfolderpath, 'w') as f:
                 csv.writer(f, delimiter=' ').writerows(features_extracted)
+                
