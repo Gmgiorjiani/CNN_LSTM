@@ -15,38 +15,10 @@ model = load_model('vgg16_80Tools.h5')
 # summarize model
 model.summary()
 # set test images paths
-test_path = '/media/proactionlab/Storage/NeuralNet_80Tools/ImageSet/test'
+test_path = '~/ImageSet/test'
 
 test_batches = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input) \
-    .flow_from_directory(directory=test_path, target_size=(224, 224), classes=['abre_caricas', 'afia-lapis',
-                                                                                'agrafador', 'agulha', 'alicate',
-                                                                                'apagador', 'apito', 'balde',
-                                                                                'batedeira', 'berbequim', 'boia',
-                                                                                'bola_de_basquete', 'borracha',
-                                                                                'borrifador', 'broca', 'buzina',
-                                                                                'cabide', 'cana_de_pesca', 'canivete',
-                                                                                'carimbo', 'carrinho_compras',
-                                                                                'castical', 'chave', 'chave_inglesa',
-                                                                                'chavena', 'clip', 'colher',
-                                                                                'colher_pau', 'copo', 'corta_unhas',
-                                                                                'dardos', 'descascador', 'desentupidor',
-                                                                                'enxada', 'escova_cabelo',
-                                                                                'escova_dentes', 'esfregona',
-                                                                                'esponja', 'espremedor', 'faca',
-                                                                                'fosforo', 'furador', 'garfo',
-                                                                                'garrafa', 'guardanapo', 'isqueiro',
-                                                                                'jarro', 'lanterna', 'lapis', 'leque',
-                                                                                'lima', 'lupa', 'manipulo_de_porta',
-                                                                                'maquina_de_barbear', 'martelo',
-                                                                                'moedor_de_pimenta', 'mola_de_roupa',
-                                                                                'pa', 'parafuso', 'peso', 'piao',
-                                                                                'pinca', 'pincel', 'prego',
-                                                                                'quebra_nozes', 'ralador', 'raquete',
-                                                                                'rato_de_pc', 'remo', 'rolha',
-                                                                                'rolo_de_massa', 'saco_de_pasteleiro',
-                                                                                'secador', 'seringa', 'taco_de_golf',
-                                                                                'tampa_de_garrafa', 'tesoura', 'tigela',
-                                                                                'varinha_magica', 'vassoura'], batch_size=800, shuffle=False)
+    .flow_from_directory(directory=test_path, target_size=(224, 224), classes=['class1', 'class2','class3', ..., 'classN'], batch_size=800, shuffle=False)
 
 test_imgs, test_labels = next(test_batches)
 print(test_labels)
@@ -92,34 +64,6 @@ def plot_confusion_matrix(cm, classes,
 
 cm = confusion_matrix(y_true=test_batches.classes, y_pred=np.argmax(predictions, axis=-1))
 
-cm_plot_labels = ['abre_caricas', 'afia-lapis',
-                  'agrafador', 'agulha', 'alicate',
-                  'apagador', 'apito', 'balde',
-                  'batedeira', 'berbequim', 'boia',
-                  'bola_de_basquete', 'borracha',
-                  'borrifador', 'broca', 'buzina',
-                  'cabide', 'cana_de_pesca', 'canivete',
-                  'carimbo', 'carrinho_compras',
-                  'castical', 'chave', 'chave_inglesa',
-                  'chavena', 'clip', 'colher',
-                  'colher_pau', 'copo', 'corta_unhas',
-                  'dardos', 'descascador', 'desentupidor',
-                  'enxada', 'escova_cabelo',
-                  'escova_dentes', 'esfregona',
-                  'esponja', 'espremedor', 'faca',
-                  'fosforo', 'furador', 'garfo',
-                  'garrafa', 'guardanapo', 'isqueiro',
-                  'jarro', 'lanterna', 'lapis', 'leque',
-                  'lima', 'lupa', 'manipulo_de_porta',
-                  'maquina_de_barbear', 'martelo',
-                  'moedor_de_pimenta', 'mola_de_roupa',
-                  'pa', 'parafuso', 'peso', 'piao',
-                  'pinca', 'pincel', 'prego',
-                  'quebra_nozes', 'ralador', 'raquete',
-                  'rato_de_pc', 'remo', 'rolha',
-                  'rolo_de_massa', 'saco_de_pasteleiro',
-                  'secador', 'seringa', 'taco_de_golf',
-                  'tampa_de_garrafa', 'tesoura', 'tigela',
-                  'varinha_magica', 'vassoura']
+cm_plot_labels = ['class1', 'class2','class3', ..., 'classN']
 
 plot_confusion_matrix(cm=cm, classes=cm_plot_labels, title='Confusion Matrix')
