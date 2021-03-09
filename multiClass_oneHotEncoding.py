@@ -1,5 +1,3 @@
-# Fine tune with Keras - VGG16
-
 # Imports
 import numpy as np
 import tensorflow as tf
@@ -132,6 +130,6 @@ print(labels[[1]])
 # importing pre-trained VGG-16 model from Keras, and transforming it from
 # type .model to type .sequention which will allow us to modify the model in the way we wanna it
 
-#vgg16_model = tf.keras.applications.vgg16.VGG16()
-#vgg16_model.summary()
-#type(vgg16_model)
+vgg16_model = tf.keras.applications.vgg16.VGG16()
+vgg16_model.summary()
+type(vgg16_model)
