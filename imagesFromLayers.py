@@ -20,7 +20,7 @@ from tensorflow.python.keras.layers import Flatten
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.vgg19 import preprocess_input
 
-model = load_model('/home/proactionlab/PycharmProjects/80Tools_VGG-16/vgg16_80Tools.h5')
+model = load_model('/vgg16_80Tools.h5')
 
 # Define a new Model that will take an image as input, and will output
 # intermediate representations for all layers except the first layer.
@@ -29,7 +29,7 @@ visual_model = tf.keras.models.Model(inputs = model.input, outputs = layer_outpu
 
 # Read your image
 #img = load_img('/media/proactionlab/Storage/NeuralNet_80Tools/ImageSet/test/abre_caricas/abre_caricas1.bmp')
-img_path = os.path.join('/media/proactionlab/Storage/NeuralNet_80Tools/ImageSet/test/abre_caricas', 'abre_caricas1.bmp')
+img_path = os.path.join('~/abre_caricas', 'abre_caricas1.bmp')
 img = image.load_img(img_path, target_size=(224, 224))
 x = image.img_to_array(img)
 x = np.expand_dims(x, axis=0)
