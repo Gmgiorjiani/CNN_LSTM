@@ -1,4 +1,7 @@
 # CNN_LSTM
+
 Combined architectures VGG-16 and Recurrent LSTM for Multiclass and Multilabel classification problems
 
-<img width="666" alt="Screenshot 2021-03-09 at 20 51 00" src="https://user-images.githubusercontent.com/32231070/110537520-b1f9c100-811a-11eb-9b25-999ab7b1f29a.png">
+<img width="754" alt="Screenshot 2021-03-09 at 21 01 35" src="https://user-images.githubusercontent.com/32231070/110537590-ca69db80-811a-11eb-8a5a-12cbb5ed0a67.png">
+
+
