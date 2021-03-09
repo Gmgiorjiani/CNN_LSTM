@@ -25,101 +25,16 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Getting our train, valid and test sets
 
-train_path = '/media/proactionlab/Storage/NeuralNet_80Tools/ImageSet/new_train_augmented'
-valid_path = '/media/proactionlab/Storage/NeuralNet_80Tools/ImageSet/new_valid'
-test_path = '/media/proactionlab/Storage/NeuralNet_80Tools/ImageSet/test'
+train_path = '~/train'
+valid_path = '~/valid'
+test_path = '~/test'
 
 train_batches = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input) \
-    .flow_from_directory(directory=train_path, target_size=(224, 224), classes=['abre_caricas', 'afia-lapis',
-                                                                                'agrafador', 'agulha', 'alicate',
-                                                                                'apagador', 'apito', 'balde',
-                                                                                'batedeira', 'berbequim', 'boia',
-                                                                                'bola_de_basquete', 'borracha',
-                                                                                'borrifador', 'broca', 'buzina',
-                                                                                'cabide', 'cana_de_pesca', 'canivete',
-                                                                                'carimbo', 'carrinho_compras',
-                                                                                'castical', 'chave', 'chave_inglesa',
-                                                                                'chavena', 'clip', 'colher',
-                                                                                'colher_pau', 'copo', 'corta_unhas',
-                                                                                'dardos', 'descascador', 'desentupidor',
-                                                                                'enxada', 'escova_cabelo',
-                                                                                'escova_dentes', 'esfregona',
-                                                                                'esponja', 'espremedor', 'faca',
-                                                                                'fosforo', 'furador', 'garfo',
-                                                                                'garrafa', 'guardanapo', 'isqueiro',
-                                                                                'jarro', 'lanterna', 'lapis', 'leque',
-                                                                                'lima', 'lupa', 'manipulo_de_porta',
-                                                                                'maquina_de_barbear', 'martelo',
-                                                                                'moedor_de_pimenta', 'mola_de_roupa',
-                                                                                'pa', 'parafuso', 'peso', 'piao',
-                                                                                'pinca', 'pincel', 'prego',
-                                                                                'quebra_nozes', 'ralador', 'raquete',
-                                                                                'rato_de_pc', 'remo', 'rolha',
-                                                                                'rolo_de_massa', 'saco_de_pasteleiro',
-                                                                                'secador', 'seringa', 'taco_de_golf',
-                                                                                'tampa_de_garrafa', 'tesoura', 'tigela',
-                                                                                'varinha_magica', 'vassoura'], batch_size=10)
+    .flow_from_directory(directory=train_path, target_size=(224, 224), classes=['class1', 'class2','class3', ..., 'classN'], batch_size=10)
 valid_batches = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input) \
-    .flow_from_directory(directory=valid_path, target_size=(224, 224), classes=['abre_caricas', 'afia-lapis',
-                                                                                'agrafador', 'agulha', 'alicate',
-                                                                                'apagador', 'apito', 'balde',
-                                                                                'batedeira', 'berbequim', 'boia',
-                                                                                'bola_de_basquete', 'borracha',
-                                                                                'borrifador', 'broca', 'buzina',
-                                                                                'cabide', 'cana_de_pesca', 'canivete',
-                                                                                'carimbo', 'carrinho_compras',
-                                                                                'castical', 'chave', 'chave_inglesa',
-                                                                                'chavena', 'clip', 'colher',
-                                                                                'colher_pau', 'copo', 'corta_unhas',
-                                                                                'dardos', 'descascador', 'desentupidor',
-                                                                                'enxada', 'escova_cabelo',
-                                                                                'escova_dentes', 'esfregona',
-                                                                                'esponja', 'espremedor', 'faca',
-                                                                                'fosforo', 'furador', 'garfo',
-                                                                                'garrafa', 'guardanapo', 'isqueiro',
-                                                                                'jarro', 'lanterna', 'lapis', 'leque',
-                                                                                'lima', 'lupa', 'manipulo_de_porta',
-                                                                                'maquina_de_barbear', 'martelo',
-                                                                                'moedor_de_pimenta', 'mola_de_roupa',
-                                                                                'pa', 'parafuso', 'peso', 'piao',
-                                                                                'pinca', 'pincel', 'prego',
-                                                                                'quebra_nozes', 'ralador', 'raquete',
-                                                                                'rato_de_pc', 'remo', 'rolha',
-                                                                                'rolo_de_massa', 'saco_de_pasteleiro',
-                                                                                'secador', 'seringa', 'taco_de_golf',
-                                                                                'tampa_de_garrafa', 'tesoura', 'tigela',
-                                                                                'varinha_magica', 'vassoura'], batch_size=10)
+    .flow_from_directory(directory=valid_path, target_size=(224, 224), classes=['class1', 'class2','class3', ..., 'classN'], batch_size=10)
 test_batches = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input) \
-    .flow_from_directory(directory=test_path, target_size=(224, 224), classes=['abre_caricas', 'afia-lapis',
-                                                                                'agrafador', 'agulha', 'alicate',
-                                                                                'apagador', 'apito', 'balde',
-                                                                                'batedeira', 'berbequim', 'boia',
-                                                                                'bola_de_basquete', 'borracha',
-                                                                                'borrifador', 'broca', 'buzina',
-                                                                                'cabide', 'cana_de_pesca', 'canivete',
-                                                                                'carimbo', 'carrinho_compras',
-                                                                                'castical', 'chave', 'chave_inglesa',
-                                                                                'chavena', 'clip', 'colher',
-                                                                                'colher_pau', 'copo', 'corta_unhas',
-                                                                                'dardos', 'descascador', 'desentupidor',
-                                                                                'enxada', 'escova_cabelo',
-                                                                                'escova_dentes', 'esfregona',
-                                                                                'esponja', 'espremedor', 'faca',
-                                                                                'fosforo', 'furador', 'garfo',
-                                                                                'garrafa', 'guardanapo', 'isqueiro',
-                                                                                'jarro', 'lanterna', 'lapis', 'leque',
-                                                                                'lima', 'lupa', 'manipulo_de_porta',
-                                                                                'maquina_de_barbear', 'martelo',
-                                                                                'moedor_de_pimenta', 'mola_de_roupa',
-                                                                                'pa', 'parafuso', 'peso', 'piao',
-                                                                                'pinca', 'pincel', 'prego',
-                                                                                'quebra_nozes', 'ralador', 'raquete',
-                                                                                'rato_de_pc', 'remo', 'rolha',
-                                                                                'rolo_de_massa', 'saco_de_pasteleiro',
-                                                                                'secador', 'seringa', 'taco_de_golf',
-                                                                                'tampa_de_garrafa', 'tesoura', 'tigela',
-                                                                                'varinha_magica', 'vassoura'], batch_size=10,
-                                                                                shuffle=False)
+    .flow_from_directory(directory=test_path, target_size=(224, 224), classes=['class1', 'class2','class3', ..., 'classN'], batch_size=10, shuffle=False)
 
 imgs, labels = next(train_batches)
 
