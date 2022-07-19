@@ -18,7 +18,7 @@ newpath = '~/block1_conv1' #change for each new layer
 # set a name to the new file (only identify the layer)
 table = '_block1_conv1_features.txt' #change for each new layer
 # number of features extracted from each layer (e.g. from block1_conv1 the output has 224*224*64 = 3211264 dimentions)
-dimention = 3211264 #change for each new block
+dimension = 3211264 #change for each new block
 # load model, select layer to extract features from, and flat layer outputs
 base_model = load_model('vgg16_80Tools.h5')
 base_model.summary()
@@ -40,7 +40,7 @@ for cat in categories:
         exemplars = [f for f in listdir(folderpath) if isfile(join(folderpath, f))]
         print(exemplars)
         cont = 0
-        features_extracted = np.array([[]], dtype=int).reshape(0, dimention)
+        features_extracted = np.array([[]], dtype=int).reshape(0, dimension)
         for exep in exemplars:
                 img_path = os.path.join(folderpath, exep)
                 img = image.load_img(img_path, target_size=(224, 224))
